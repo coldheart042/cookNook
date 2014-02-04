@@ -61,6 +61,7 @@
     <Content Include="Chat.aspx" />
     <Content Include="Css\masterStyle.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\cookNook.png" />
     <Content Include="Products.aspx" />
     <Content Include="Recipes.aspx" />
     <Content Include="Web.config" />
@@ -120,7 +121,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Js\" />
   </ItemGroup>
   <PropertyGroup>
