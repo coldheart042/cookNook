@@ -1,45 +1,42 @@
-﻿#banner {
-    float:left;
-}
-body {
+﻿body {
     background-color:black;
 }
-footer {
+#banner {
+    display:inline-block;
+    padding-top:0;
+    margin-left:10%;
+}
+#login {
+    display:inline-block;
     background-color:purple;
+    width:365px;
+}
+#side {
+    display:inline-block;
+    width:125px;
+    margin-left:10%;
+    border:solid 1px red;
+}
+nav {
+    background-color:orange;
+}
+aside {
+    background-color:green;
+    height:250px;
+}
+#content {
+    background-color:yellow;
     width:60%;
-    margin-left:20%;
-    margin-right:20%;
-    height:50px;
-    text-align:center;
+    display:inline-block;
+    position:relative;
+    border:solid 1px red;
+}
+footer {
+    background-color:blue;
+    width:80%;
+    height:75px;
+    margin-left:10%;
+    margin-right:auto;
     position:absolute;
     bottom:0;
 }
-#login {
-    background-color:orange;
-    width:40%;
-    margin-left:auto;
-}
-nav {
-    background-color:blue;
-    width:150px;
-}
-    nav ul {
-        list-style-type:none;
-        padding-top:2px;
-        padding-bottom:2px;
-    }
-        nav ul li {
-            padding:2px;
-        }
-            nav ul li a {
-                text-decoration:none;
-            }
-            nav ul li a:link {
-                color:black;
-            }
-            nav ul li a:hover {
-                color:grey;
-            }
-            nav ul li a::after {
-                color:black;
-            }

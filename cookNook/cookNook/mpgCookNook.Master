@@ -16,11 +16,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
+        <div>
         <!-- This is the top area of the page -->
         <asp:Image ID="banner" runat="server" ImageUrl="Images/cooknook.png" Width="50%" />
         <section id="login">
-            <table style="width:100%;">
+            <table style="width:47%;">
                 <tr>
                     <th colspan="2">Login ( Incomplete)</th>
                 </tr>
@@ -50,8 +50,9 @@
                 </tr>
             </table>
         </section>
-
+        </div>
         <!-- This is the side navigation -->
+        <div id="side">
         <nav>
             <ul>
                 <li class="mainNav"><a href="Default.aspx">Home</a></li>
@@ -61,7 +62,13 @@
                 <li class="mainNav"><a href="About.aspx">About Us</a></li>
             </ul>
         </nav>
-    <div>
+
+        <!-- This is the ad space -->
+        <aside>
+
+        </aside>
+            </div>
+    <div id="content">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
