@@ -22,55 +22,73 @@
             <td class="auto-style3">
                 <asp:Label ID="Label3" runat="server" Text="First Name"></asp:Label>
             </td>
-            <td class="form"></td>
+            <td>
+                <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label4" runat="server" Text="Last Name"></asp:Label>
             </td>
-            <td class="form">&nbsp;</td>
+            <td>
+                <asp:TextBox ID="TextBox2" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label5" runat="server" Text="Address"></asp:Label>
             </td>
-            <td class="form">&nbsp;</td>
+            <td>
+                <asp:TextBox ID="TextBox3" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label6" runat="server" Text="City"></asp:Label>
             </td>
-            <td class="form">&nbsp;</td>
+            <td>
+                <asp:TextBox ID="TextBox4" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style3">
                 <asp:Label ID="Label7" runat="server" Text="State"></asp:Label>
             </td>
-            <td class="form"></td>
+            <td>
+                <asp:TextBox ID="TextBox5" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label8" runat="server" Text="Zip"></asp:Label>
             </td>
-            <td class="form">&nbsp;</td>
+            <td>
+                <asp:TextBox ID="TextBox6" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label9" runat="server" Text="Email"></asp:Label>
             </td>
-            <td class="form">&nbsp;</td>
+            <td>
+                <asp:TextBox ID="TextBox7" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label10" runat="server" Text="Password"></asp:Label>
             </td>
-            <td class="form">&nbsp;</td>
+            <td>
+                <asp:TextBox ID="TextBox8" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label11" runat="server" Text="Phone"></asp:Label>
             </td>
-            <td class="form">&nbsp;</td>
+            <td>
+                <asp:TextBox ID="TextBox9" runat="server" Width="200px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style4">
