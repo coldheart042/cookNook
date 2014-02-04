@@ -64,6 +64,7 @@
     <Content Include="Images\cookNook.png" />
     <Content Include="Products.aspx" />
     <Content Include="Recipes.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="Recipes.aspx.designer.cs">
       <DependentUpon>Recipes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
