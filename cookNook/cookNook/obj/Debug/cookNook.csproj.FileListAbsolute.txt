@@ -1,0 +1,4 @@
+C:\Users\Richard\Documents\GitHub\cookNook\cookNook\cookNook\bin\cookNook.dll
+C:\Users\Richard\Documents\GitHub\cookNook\cookNook\cookNook\bin\cookNook.pdb
+C:\Users\Richard\Documents\GitHub\cookNook\cookNook\cookNook\obj\Debug\cookNook.dll
+C:\Users\Richard\Documents\GitHub\cookNook\cookNook\cookNook\obj\Debug\cookNook.pdb
