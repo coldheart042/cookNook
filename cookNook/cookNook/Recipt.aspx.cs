@@ -11,7 +11,7 @@ namespace cookNook
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Customer c = HttpContext.Current.Session["customer"];
+            Customer c = (Customer) Session["customer"];
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -21,7 +21,8 @@ namespace cookNook
 
         protected void btnCorrect_Click(object sender, EventArgs e)
         {
-
+            Session["notCorrect"] = 1;
+            Response.Redirect("Register.aspx");
         }
     }
 }
