@@ -10,7 +10,7 @@
 namespace cookNook {
     
     
-    public partial class Register {
+    public partial class Recipt {
         
         /// <summary>
         /// Label3 control.
@@ -173,6 +173,15 @@ namespace cookNook {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
+        
+        /// <summary>
+        /// btnCorrect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCorrect;
         
         /// <summary>
         /// btnSubmit control.

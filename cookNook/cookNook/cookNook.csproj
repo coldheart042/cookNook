@@ -64,6 +64,7 @@
     <Content Include="Images\cookNook.png" />
     <Content Include="Products.aspx" />
     <Content Include="Recipes.aspx" />
+    <Content Include="Recipt.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -75,7 +76,6 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\BusinessObject.cs" />
     <Compile Include="Chat.aspx.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -83,6 +83,7 @@
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="Recipes.aspx.designer.cs">
       <DependentUpon>Recipes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recipt.aspx.cs">
+      <DependentUpon>Recipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recipt.aspx.designer.cs">
+      <DependentUpon>Recipt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

@@ -13,5 +13,21 @@ namespace cookNook
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+             Customer c = new Customer();
+             c.strFirst = txtFirst.Text;
+             c.strLast = txtLast.Text;
+             c.strAddress = txtAddress.Text;
+             c.strCity = txtCity.Text;
+             c.strState = txtState.Text;
+             c.strZip = txtZip.Text;
+             c.strEmail = txtEmail.Text;
+             c.strPassword = txtPassword.Text;
+             c.strPhone = txtPhone.Text;
+             Session["customer"] = c;
+        }
+
     }
 }
