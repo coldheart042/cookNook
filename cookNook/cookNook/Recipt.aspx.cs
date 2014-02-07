@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -29,7 +31,18 @@ namespace cookNook
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            string connectionString = ConfigurationManager.ConnectionStrings["SQLDbConnection"].ToString();
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                btnSubmit.Text = "Connection made!";
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                btnSubmit.Text = "Error Connecting to DB!";
+            }
         }
 
         protected void btnCorrect_Click(object sender, EventArgs e)
