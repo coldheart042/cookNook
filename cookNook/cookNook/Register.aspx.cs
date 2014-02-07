@@ -38,6 +38,7 @@ namespace cookNook
             c.strPassword = txtPassword.Text;
             c.strPhone = txtPhone.Text;
             Session["customer"] = c;
+            Session["bookmarkBlock"] = 1;
             Response.Redirect("Recipt.aspx");
         }
 

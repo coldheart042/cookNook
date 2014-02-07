@@ -11,7 +11,20 @@ namespace cookNook
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["bookmarkBlock"] == null) 
+            { 
+                Response.Redirect("Default.aspx"); 
+            }
             Customer c = (Customer) Session["customer"];
+            txtFirst.Text = c.strFirst;
+            txtLast.Text = c.strLast;
+            txtAddress.Text = c.strAddress;
+            txtCity.Text = c.strCity;
+            txtState.Text = c.strState;
+            txtZip.Text = c.strZip;
+            txtEmail.Text = c.strEmail;
+            txtPassword.Text = c.strPassword;
+            txtPhone.Text = c.strPhone;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
