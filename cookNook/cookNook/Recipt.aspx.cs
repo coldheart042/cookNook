@@ -33,15 +33,26 @@ namespace cookNook
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SQLDbConnection"].ToString();
             SqlConnection connection = new SqlConnection(connectionString);
+            String dt = DateTime.Today.ToShortDateString();
+
             try
             {
                 connection.Open();
                 btnSubmit.Text = "Connection made!";
+                btnSubmit.Enabled = false;
+
+                SqlCommand addRow = new SqlCommand("insert into dbo.tblCustomerCN ( CustomerIDpk, NameFirst, NameLast, Address, City, State, Zip, CustomerDate, Email, Password, Phone ) values ( " + 
+                    "NEWID(), '" + txtFirst.Text + "', '" + txtLast.Text + "', '" + txtAddress.Text + "', '" + txtCity.Text + "', '" + txtState.Text + "', '" + txtZip.Text + "', '" + dt + "', '" + txtEmail.Text + "', '" + txtPassword.Text + "', '" + txtPhone.Text + "' )",
+                    connection);
+                int a = addRow.ExecuteNonQuery();
+                //IAsyncResult result = addRow.BeginExecuteNonQuery(); // Failed
+                //addRow.EndExecuteNonQuery((result));
                 connection.Close();
             }
-            catch (Exception)
+            catch (Exception x)
             {
                 btnSubmit.Text = "Error Connecting to DB!";
+                Response.Write("<span style='color:white'>" + x.GetBaseException() + "</span>");
             }
         }
 
