@@ -30,6 +30,7 @@ namespace cookNook
                     txtState.Text = customer.strState;
                     txtZip.Text = customer.strZip;
                     txtEmail.Text = customer.strEmail;
+                    hdnPassword.Value = customer.strPassword;
                     txtPhone.Text = customer.strPhone;
                 }
             }
@@ -44,11 +45,19 @@ namespace cookNook
         {   
             using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConn"].ToString()))
             {
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tblCustomerCN", cn);
-                cn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                rdr.Read();
-                Response.Write(rdr[0].ToString()); //read a value
+                try
+                {
+                    String date = DateTime.Now.ToShortDateString();
+                    SqlCommand cmd = new SqlCommand("Insert into tblCustomerCN(CustomerIDpk,NameFirst,NameLast,Address,City,State,Zip,Email,Password,Phone,CustomerDate) values(NEWID(), '" + txtNameFirst.Text + "', '" + txtNameLast.Text + "', '" + txtAddress.Text + "', '" + txtCity.Text + "', '" + txtState.Text + "', '" + txtZip.Text + "', '" + txtEmail.Text + "', '" + hdnPassword.Value + "', '" + txtPhone.Text + "', '" + date + "')", cn);
+                    cn.Open();
+                    cmd.BeginExecuteNonQuery();
+                    cn.Close();
+                    btnSubmit.Text = "Success!";
+                }
+                catch (Exception)
+                {
+                    btnSubmit.Text = "Error!";
+                }
             }
         }
 

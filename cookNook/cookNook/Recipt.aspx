@@ -66,6 +66,7 @@
                 <asp:Label ID="Label9" runat="server" Text="Phone"></asp:Label>
             </td>
             <td class="auto-style2">
+                <asp:HiddenField ID="hdnPassword" runat="server" />
                 <asp:TextBox ID="txtPhone" runat="server" Enabled="False"></asp:TextBox>
             </td>
         </tr>
