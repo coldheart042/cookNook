@@ -16,6 +16,20 @@ namespace cookNook
         public String strPassword { get; set; }
         public String strEmail { get; set; }
         public String strPhone { get; set; }
-        public String CustomerDate { get; set; }
+        public String strCustomerDate { get; set; }
+
+        public void setFields(String first,String last, String address, String city, String state, String zip, String password, String email, String phone, String customerDate)
+        {
+            this.strNameFirst = first;
+            this.strNameLast = last;
+            this.strAddress = address;
+            this.strCity = city;
+            this.strState = state;
+            this.strZip = zip;
+            this.strPassword = password;
+            this.strEmail = email;
+            this.strPhone = phone;
+            this.
+        }
     }
 }
