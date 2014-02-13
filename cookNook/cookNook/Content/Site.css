@@ -329,6 +329,11 @@ aside {
     font-weight: 700;
 }
 
+/*.formTable {
+    margin-left:auto;
+    margin-right:auto;
+}*/
+
 /* login page */
 #loginForm {
     border-right: solid 2px #c8c8c8;
