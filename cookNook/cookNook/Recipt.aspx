@@ -63,14 +63,6 @@
         </tr>
         <tr>
             <td class="auto-style1">
-                <asp:Label ID="Label8" runat="server" Text="Password"></asp:Label>
-            </td>
-            <td class="auto-style2">
-                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Enabled="False"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style1">
                 <asp:Label ID="Label9" runat="server" Text="Phone"></asp:Label>
             </td>
             <td class="auto-style2">
@@ -79,7 +71,7 @@
         </tr>
         <tr>
             <td class="auto-style1">
-                <asp:Button ID="btnCorrect" runat="server" Text="Correct" OnClick="Button1_Click" />
+                <asp:Button ID="btnCorrect" runat="server" Text="Correct" OnClick="btnCorrect_Click" />
             </td>
             <td class="auto-style2">
                 <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />

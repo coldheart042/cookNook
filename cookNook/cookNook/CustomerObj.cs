@@ -29,7 +29,7 @@ namespace cookNook
             this.strPassword = password;
             this.strEmail = email;
             this.strPhone = phone;
-            this.
+            this.strCustomerDate = customerDate;
         }
     }
 }
