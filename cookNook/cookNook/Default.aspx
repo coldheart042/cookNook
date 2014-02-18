@@ -30,7 +30,8 @@
         </li>
         <li class="four">
             <h5>Buy our products!</h5>
-            We have stuff to sell. It's probably crap, but you don't know that! 
+            We have stuff to sell. It's probably crap, but you don't know that!  
         </li>
     </ol>
+    <asp:AdRotator ID="adrAds" AdvertisementFile="~/adfile.xml" runat="server" Height="200px" Width="200px" />
 </asp:Content>

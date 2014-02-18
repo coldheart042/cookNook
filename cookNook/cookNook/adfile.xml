@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>Images/arch1.jpg</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <AlternateText>
+      Visit google.com
+    </AlternateText>
+    <Impressions>4</Impressions>
+    <Keyword>google</Keyword>
+  </Ad>
+
+  <Ad>
+    <ImageUrl>Images/nature1.jpg</ImageUrl>
+    <NavigateUrl>http://www.yahoo.com</NavigateUrl>
+    <AlternateText>
+      Visit yahoo.com
+    </AlternateText>
+    <Impressions>2</Impressions>
+    <Keyword>yahoo</Keyword>
+  </Ad>
+
+  <Ad>
+    <ImageUrl>Images/tech1.jpg</ImageUrl>
+    <NavigateUrl>http://www.bing.com</NavigateUrl>
+    <AlternateText>
+      Visit bing.com
+    </AlternateText>
+    <Impressions>2</Impressions>
+    <Keyword>bing</Keyword>
+  </Ad>
+</Advertisements>
