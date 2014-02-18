@@ -6,6 +6,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <table style="width: 50%;" class="formTable">
         <tr>
+            <td class="auto-style1" colspan="2">
+                <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+            </td>
+        </tr>
+        <tr>
             <td class="auto-style1">
                 <asp:Label ID="Label1" runat="server" Text="First Name"></asp:Label>
             </td>

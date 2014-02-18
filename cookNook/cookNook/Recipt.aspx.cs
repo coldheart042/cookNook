@@ -54,9 +54,16 @@ namespace cookNook
                     cn.Close();
                     btnSubmit.Text = "Success!";
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    btnSubmit.Text = "Error!";
+                    if (ex is SqlException)
+                    {
+                        lblError.Text = "There was a database error: " + ex.Message;
+                    }
+                    else
+                    {
+                        lblError.Text = "There was an error: " + ex.Message;
+                    }
                 }
             }
         }
