@@ -118,4 +118,26 @@
             
         </tr>
     </table>
+    <div>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="dsProducts" AllowPaging="True" AllowSorting="True" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" />
+                <asp:BoundField DataField="ItemSKU" HeaderText="SKU" SortExpression="ItemSKU" />
+                <asp:BoundField DataField="ItemName" HeaderText="Name" SortExpression="ItemName" />
+                <asp:BoundField DataField="ItemPrice" HeaderText="Price" SortExpression="ItemPrice" />
+                <asp:BoundField DataField="Discount" HeaderText="Discount" SortExpression="Discount" />
+                <asp:BoundField DataField="OnHand" HeaderText="On-Hand" SortExpression="OnHand" />
+            </Columns>
+            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+            <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FFF1D4" />
+            <SortedAscendingHeaderStyle BackColor="#B95C30" />
+            <SortedDescendingCellStyle BackColor="#F1E5CE" />
+            <SortedDescendingHeaderStyle BackColor="#93451F" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="dsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:WILLIAMS_w13ConnectionString %>" SelectCommand="SELECT [ItemSKU], [ItemName], [ItemPrice], [Discount], [OnHand] FROM [tblProducts]"></asp:SqlDataSource>
+    </div>
 </asp:Content>
