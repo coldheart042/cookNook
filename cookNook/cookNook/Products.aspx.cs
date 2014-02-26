@@ -25,6 +25,7 @@ namespace cookNook
                 txtPhone.Text = customer.strPhone;
                 Session["customer"] = null;
             }
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -35,6 +36,11 @@ namespace cookNook
             customer.setFields(txtNameFirst.Text, txtNameLast.Text, txtAddress.Text, txtCity.Text, txtState.Text, txtZip.Text, txtPassword.Text, txtEmail.Text, txtPhone.Text, DateTime.Now.ToShortDateString() );
             Session["customer"] = customer;
             Response.Redirect("~/Recipt.aspx");
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

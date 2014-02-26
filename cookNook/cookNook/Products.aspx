@@ -119,14 +119,20 @@
         </tr>
     </table>
     <div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="dsProducts" AllowPaging="True" AllowSorting="True" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+        <h1>Products list</h1>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="dsProducts" AllowPaging="True" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="ItemSKU" HeaderText="SKU" SortExpression="ItemSKU" />
                 <asp:BoundField DataField="ItemName" HeaderText="Name" SortExpression="ItemName" />
                 <asp:BoundField DataField="ItemPrice" HeaderText="Price" SortExpression="ItemPrice" />
                 <asp:BoundField DataField="Discount" HeaderText="Discount" SortExpression="Discount" />
                 <asp:BoundField DataField="OnHand" HeaderText="On-Hand" SortExpression="OnHand" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:TextBox ID="txtQty" runat="server" TextMode="Number"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ButtonType="Button" SelectText="BUY!" ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
             <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
