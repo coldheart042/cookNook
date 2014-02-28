@@ -37,10 +37,5 @@ namespace cookNook
             Session["customer"] = customer;
             Response.Redirect("~/Recipt.aspx");
         }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
