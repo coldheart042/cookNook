@@ -119,24 +119,26 @@
         </tr>
     </table>
     <div>
-        <h1>Products list<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="dsProducts" ForeColor="Black" GridLines="None" Width="800px">
+        <h1>Products list</h1>
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="dsProducts" ForeColor="Black" GridLines="None" Width="800px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
                 <asp:ImageField DataImageUrlField="FileName" HeaderText="Image">
                 </asp:ImageField>
-                <asp:BoundField DataField="PartNumber" HeaderText="PartNumber" SortExpression="PartNumber" />
+                <asp:BoundField DataField="PartNumber" HeaderText="Part No." SortExpression="PartNumber" >
+                <ItemStyle Width="7em" />
+                </asp:BoundField>
                 <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                 <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                <asp:BoundField DataField="OnHand" HeaderText="OnHand" SortExpression="OnHand" />
-                <asp:BoundField DataField="FileName" HeaderText="FileName" SortExpression="FileName" Visible="False" />
+                <asp:BoundField DataField="OnHand" HeaderText="In Stock" SortExpression="OnHand" />
+                <asp:BoundField DataField="FileName" HeaderText="Image" SortExpression="FileName" Visible="False" />
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
                
-                <asp:ButtonField ButtonType="Button" Text="Buy!" />
+                <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Buy" />
                
             </Columns>
             <FooterStyle BackColor="Tan" />
@@ -149,7 +151,7 @@
             <SortedDescendingCellStyle BackColor="#E1DB9C" />
             <SortedDescendingHeaderStyle BackColor="#C2A47B" />
             </asp:GridView>
-        </h1>
+        
         <asp:SqlDataSource ID="dsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:WILLIAMS_w13ConnectionString %>" SelectCommand="SELECT [PartNumber], [Description], [Price], [OnHand], [FileName] FROM [tblProducts]"></asp:SqlDataSource>
     </div>
 </asp:Content>

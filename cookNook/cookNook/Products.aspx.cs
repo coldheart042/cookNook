@@ -37,5 +37,12 @@ namespace cookNook
             Session["customer"] = customer;
             Response.Redirect("~/Recipt.aspx");
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = GridView1.SelectedIndex;
+            int amount = int.Parse(((TextBox)GridView1.Rows[i].FindControl("txtQuantity")).Text);
+            
+        }
     }
 }
