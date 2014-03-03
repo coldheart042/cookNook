@@ -38,11 +38,13 @@ namespace cookNook
             Response.Redirect("~/Recipt.aspx");
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) // When User clicks the "Buy" button
         {
-            int i = GridView1.SelectedIndex;
-            int amount = int.Parse(((TextBox)GridView1.Rows[i].FindControl("txtQuantity")).Text);
-            
+            int i = GridView1.SelectedIndex, amount = int.Parse(((TextBox)GridView1.Rows[i].FindControl("txtQuantity")).Text);    // Get the selected row as an object, and the value of the tbox
+            GridViewRow currentRow = GridView1.Rows[i];
+            string partNo = currentRow.Cells[2].Text, desc = currentRow.Cells[3].Text;
+            double price = double.Parse(currentRow.Cells[3].Text.Substring(1));            
+
         }
     }
 }

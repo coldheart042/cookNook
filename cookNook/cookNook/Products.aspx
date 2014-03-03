@@ -129,7 +129,7 @@
                 <ItemStyle Width="7em" />
                 </asp:BoundField>
                 <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" DataFormatString="{0:c}" />
                 <asp:BoundField DataField="OnHand" HeaderText="In Stock" SortExpression="OnHand" />
                 <asp:BoundField DataField="FileName" HeaderText="Image" SortExpression="FileName" Visible="False" />
                 <asp:TemplateField>
