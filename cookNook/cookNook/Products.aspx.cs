@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,8 +25,9 @@ namespace cookNook
                 txtPassword.Text = customer.strPassword;
                 txtPhone.Text = customer.strPhone;
                 Session["customer"] = null;
+                
             }
-
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -38,12 +40,22 @@ namespace cookNook
             Response.Redirect("~/Recipt.aspx");
         }
 
+        ArrayList aQty = new ArrayList(), aPartNo = new ArrayList(), aDesc = new ArrayList(), aPrice = new ArrayList();
+        double total;
+
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) // When User clicks the "Buy" button
         {
-            int i = GridView1.SelectedIndex, amount = int.Parse(((TextBox)GridView1.Rows[i].FindControl("txtQuantity")).Text);    // Get the selected row as an object, and the value of the tbox
+            int i = GridView1.SelectedIndex, amount = int.Parse(((TextBox)GridView1.Rows[i].FindControl("txtQuantity")).Text);    // Get the selected row as an object, and the value of the tbox           
             GridViewRow currentRow = GridView1.Rows[i];
-            string partNo = currentRow.Cells[2].Text, desc = currentRow.Cells[3].Text;
-            double price = double.Parse(currentRow.Cells[3].Text.Substring(1));            
+            string partNo = currentRow.Cells[1].Text;
+            string desc = currentRow.Cells[2].Text;
+            double price = double.Parse(currentRow.Cells[3].Text.Substring(1));
+            aQty.Add(amount);
+            aPartNo.Add(partNo);
+            aDesc.Add(desc);
+            aPrice.Add(price);
+            string shoppingCart = "";
+            
 
         }
     }

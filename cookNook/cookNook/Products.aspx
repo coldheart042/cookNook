@@ -138,7 +138,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                
-                <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Buy" />
+                <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Buy"/>
                
             </Columns>
             <FooterStyle BackColor="Tan" />
@@ -153,5 +153,11 @@
             </asp:GridView>
         
         <asp:SqlDataSource ID="dsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:WILLIAMS_w13ConnectionString %>" SelectCommand="SELECT [PartNumber], [Description], [Price], [OnHand], [FileName] FROM [tblProducts]"></asp:SqlDataSource>
+    </div>
+    <div id="shopCart" runat="server">
+        <table>
+
+        </table>
+        <span id ="total" runat="server"></span>
     </div>
 </asp:Content>
