@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace cookNook
-{
-    public partial class Contact
-    {
+namespace cookNook {
+    
+    
+    public partial class Contact {
     }
 }
