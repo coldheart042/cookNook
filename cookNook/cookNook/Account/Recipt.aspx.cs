@@ -62,6 +62,7 @@ namespace cookNook
                         cn.Close();
                         btnSubmit.Text = "Success!";
                         FormsAuthentication.SetAuthCookie(txtEmail.Text, true);
+                        Session["Check"] = true;
                         Response.Redirect("~/Default.aspx");
                     }
                     else
