@@ -89,7 +89,7 @@ namespace cookNook
 
         protected void btnCorrect_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Account/Login.aspx");
+            Response.Redirect("~/Products.aspx");
         }
     }
 }

@@ -14,7 +14,6 @@ namespace cookNook
         ArrayList cart;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             if (Session["Check"] == null)
             {
                 Response.Redirect("~/Account/Login.aspx");
@@ -39,6 +38,7 @@ namespace cookNook
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) // When User clicks the "Buy" button
         {
+            
             lblErrorMsg.Text = "";
             // Set fields in item object to process.
             int index = GridView1.SelectedIndex;
@@ -69,6 +69,7 @@ namespace cookNook
             // Save cart as session variable
             Session["cart"] = cart;
             lblEmpty.Visible = false;
+            btnCheckOut.Visible = true;
         }
 
         protected void btnCheckOut_Click(object sender, EventArgs e)

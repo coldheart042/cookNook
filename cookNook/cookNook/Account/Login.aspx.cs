@@ -50,12 +50,13 @@ namespace cookNook
                  {
                       // This is the actual statement which will authenticate the user
                       e.Authenticated = true;
+                      Session["login"] = Login1.UserName;
                       // Store your authentication mode in session variable 
                      Session["Check"] = true;
                 }
                else
              {
-                    // If user faild to provide valid user name and password
+                    // If user failed to provide valid user name and password
                     e.Authenticated = false;
            }
         }
