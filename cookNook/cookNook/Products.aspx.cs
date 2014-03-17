@@ -11,9 +11,7 @@ namespace cookNook
 {
     public partial class Products : System.Web.UI.Page
     {
-
-        ArrayList aQty = new ArrayList(), aPartNo = new ArrayList(), aDesc = new ArrayList(), aPrice = new ArrayList();
-        double total;
+        ArrayList cart;
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -21,13 +19,16 @@ namespace cookNook
             {
                 Response.Redirect("~/Account/Login.aspx");
             }
-            if (Session["cart"] != null)
+
+            // Set up or fetch cart
+            Boolean cartExists = (Session["cart"] != null);
+            if (!cartExists)
             {
-                List<ArrayList> cart = (List<ArrayList>)Session["cart"];
-                aQty = cart[0];
-                aPartNo = cart[1];
-                aDesc = cart[2];
-                aPrice = cart[3];
+                cart = new ArrayList();
+            }
+            else
+            {
+                cart = (ArrayList)Session["cart"];
             }
             
         }
@@ -38,35 +39,93 @@ namespace cookNook
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) // When User clicks the "Buy" button
         {
-            int index = GridView1.SelectedIndex, amount = int.Parse(((TextBox)GridView1.Rows[index].FindControl("txtQuantity")).Text);    // Get the selected row as an object, and the value of the tbox           
+            lblErrorMsg.Text = "";
+            // Set fields in item object to process.
+            int index = GridView1.SelectedIndex;
             GridViewRow currentRow = GridView1.Rows[index];
-            string partNo = currentRow.Cells[1].Text;
-            string desc = currentRow.Cells[2].Text;
-            double price = double.Parse(currentRow.Cells[3].Text.Substring(1));
-            aQty.Add(amount);
-            aPartNo.Add(partNo);
-            aDesc.Add(desc);
-            aPrice.Add(price);
-
-            List<ArrayList> temp = new List<ArrayList>();
-            temp.Add(aQty);
-            temp.Add(aPartNo);
-            temp.Add(aDesc);
-            temp.Add(aPrice);
-            Session["cart"] = temp;
-
-            for (int i = 0; i < aQty.Count; i++)
+            int qty = 0;
+            // Get the selected row as an object, and the value of the tbox
+            try
             {
+                qty = int.Parse(((TextBox)GridView1.Rows[index].FindControl("txtQuantity")).Text);
+            }
+            catch (Exception ex)
+            {
+                lblErrorMsg.Text = "Incorrect input! " + ex.Message;
+            }
+            string partNo = currentRow.Cells[1].Text;
+            string description = currentRow.Cells[2].Text;
+            double price = double.Parse(currentRow.Cells[3].Text.Substring(1));
+            ProductClass item = new ProductClass();
+            item.setFields(partNo, description, qty, price);
+            
+            // Process Item if cart's count > 0, else add to cart.
+            if (cart.Count > 0)
+                processItem(item);
+            else
+                cart.Add(item);
+            // Add Rows to be rendered during refresh
+            addRows();
+            // Save cart as session variable
+            Session["cart"] = cart;
+            lblEmpty.Visible = false;
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Recipt.aspx");
+        }
+
+        protected void processItem(ProductClass item)
+        {
+            // Determine if item is in cart
+            bool isPresent = false;
+            int index = 0;
+            foreach (ProductClass cartitem in cart)
+            {
+                if(cartitem.partNo == item.partNo)
+                {
+                    isPresent = true;
+                    index = cart.IndexOf(cartitem);
+                }
+                else
+                {
+
+                }
+            }
+            // Add to qty if item is present in cart
+            if (isPresent)
+            {
+                ProductClass temp = (ProductClass)cart[index];
+                cart.RemoveAt(index);
+                temp.qty += item.qty;
+                cart.Add(temp);
+            }
+            else
+            {
+                cart.Add(item);
+            }
+        }
+
+        private void addRows()
+        {
+            foreach (ProductClass item in cart)
+            {
+                // Create new Tablerow and cells
                 TableRow tr = new TableRow();
                 TableCell c1 = new TableCell(), c2 = new TableCell(), c3 = new TableCell(), c4 = new TableCell();
-                c1.Text = aQty[i].ToString();
-                c2.Text = (string)aPartNo[i];
-                c3.Text = (string)aDesc[i];
-                c4.Text = aPrice[i].ToString();
-                tr.Cells.Add(c1);
-                tr.Cells.Add(c2);
-                tr.Cells.Add(c3);
-                tr.Cells.Add(c4);
+                c1.Text = item.qty.ToString();
+                c2.Text = item.partNo;
+                c3.Text = item.description;
+                c4.Text = item.price.ToString("C");
+
+                // Add cells to the row
+                tr.Controls.Add(c1);
+                tr.Controls.Add(c2);
+                tr.Controls.Add(c3);
+                tr.Controls.Add(c4);
+
+                // Add row to table
                 tblCart.Rows.Add(tr);
             }
         }

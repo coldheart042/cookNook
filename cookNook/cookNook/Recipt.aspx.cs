@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace cookNook
 {
-    public partial class _Default : Page
+    public partial class Recipt1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Timer1_Tick(object sender, EventArgs e)
-        {
-            
         }
     }
 }

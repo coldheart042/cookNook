@@ -33,5 +33,11 @@
             We have stuff to sell. It's probably crap, but you don't know that!  
         </li>
     </ol>
-    <asp:AdRotator ID="adrAds" AdvertisementFile="~/adfile.xml" runat="server" Height="200px" Width="200px" />
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick">
+            </asp:Timer>
+            <asp:AdRotator ID="adrAds" runat="server" AdvertisementFile="~/adfile.xml" Height="200px" Width="200px" />
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

@@ -13,6 +13,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+        <asp:Label ID="lblErrorMsg" runat="server" Text="" ForeColor="Red"></asp:Label>
         <div id="accordion">    
             <h3>Shopping Cart: (Click to expand)</h3>
             <div>
@@ -24,6 +25,8 @@
                 <asp:TableCell BorderStyle="Solid" BorderWidth="1px" BorderColor="#808080">Price</asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+                <asp:Label id="lblEmpty" runat="server" Text="Cart is empty!"></asp:Label>
+                <asp:Button ID="btnCheckOut" runat="server" Text="Check out" OnClick="btnCheckOut_Click" Visible="False" />
         </div>
             <h3>Products list: (Click to expand)</h3>
             
@@ -40,7 +43,7 @@
                             <asp:BoundField DataField="FileName" HeaderText="Image" SortExpression="FileName" Visible="False" />
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox ID="txtQuantity" runat="server" TextMode="Number" Text="0"></asp:TextBox>
                                 </ItemTemplate>
                             </asp:TemplateField>               
                             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Buy"/>               
