@@ -18,8 +18,7 @@ namespace cookNook
             {
                 Response.Redirect("~/Account/Login.aspx");
             }
-
-            // Set up or fetch cart
+           // Set up or fetch cart
             Boolean cartExists = (Session["cart"] != null);
             if (!cartExists)
             {
@@ -29,11 +28,7 @@ namespace cookNook
             {
                 cart = (ArrayList)Session["cart"];
             }
-            
         }
-
-      
-
        
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) // When User clicks the "Buy" button
@@ -53,23 +48,50 @@ namespace cookNook
             {
                 lblErrorMsg.Text = "Incorrect input! " + ex.Message;
             }
-            string partNo = currentRow.Cells[1].Text;
-            string description = currentRow.Cells[2].Text;
-            double price = double.Parse(currentRow.Cells[3].Text.Substring(1));
-            ProductClass item = new ProductClass();
-            item.setFields(partNo, description, qty, price);
-            
-            // Process Item if cart's count > 0, else add to cart.
-            if (cart.Count > 0)
-                processItem(item);
+            int onHand = int.Parse(currentRow.Cells[4].Text);
+            if (onHand > 0)
+            {
+                if (onHand - qty >= 0)
+                {
+                    if (qty > 0)
+                    {
+                        string partNo = currentRow.Cells[1].Text;
+                        string description = currentRow.Cells[2].Text;
+                        double price = double.Parse(currentRow.Cells[3].Text.Substring(1));
+                        ProductClass item = new ProductClass();
+                        item.setFields(partNo, description, qty, price);
+
+                        // Process Item if cart's count > 0, else add to cart.
+                        if (cart.Count > 0)
+                        {
+                            processItem(item, onHand);
+                        }
+                        else
+                        {
+                            cart.Add(item);
+                            
+                        }
+                        addRows();
+                        // Save cart as session variable
+                        Session["cart"] = cart;
+                        lblEmpty.Visible = false;
+                        btnCheckOut.Visible = true;
+                    }
+                    else
+                    {
+                        lblErrorMsg.Text = "Must specify a valid amount!";
+                        addRows();                                              //
+                    }
+                }
+                else
+                {
+                    lblErrorMsg.Text = "The quantity requested is more than the amount in stock, please adjust amount accordingly.";
+                }
+            }
             else
-                cart.Add(item);
-            // Add Rows to be rendered during refresh
-            addRows();
-            // Save cart as session variable
-            Session["cart"] = cart;
-            lblEmpty.Visible = false;
-            btnCheckOut.Visible = true;
+            {
+                lblErrorMsg.Text = "The selected item is out of stock, please try another item.";
+            }
         }
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
@@ -77,7 +99,7 @@ namespace cookNook
             Response.Redirect("~/Recipt.aspx");
         }
 
-        protected void processItem(ProductClass item)
+        protected void processItem(ProductClass item, int onHand)
         {
             // Determine if item is in cart
             bool isPresent = false;
@@ -98,9 +120,16 @@ namespace cookNook
             if (isPresent)
             {
                 ProductClass temp = (ProductClass)cart[index];
-                cart.RemoveAt(index);
-                temp.qty += item.qty;
-                cart.Add(temp);
+                if (onHand >= (temp.qty + item.qty))
+                {
+                    cart.RemoveAt(index);
+                    temp.qty += item.qty;
+                    cart.Add(temp);
+                }
+                else
+                {
+                    lblErrorMsg.Text = "Amount requested must be less than amount in stock!";
+                }
             }
             else
             {

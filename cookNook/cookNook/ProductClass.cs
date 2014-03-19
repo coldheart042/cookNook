@@ -19,5 +19,21 @@ namespace cookNook
             this.qty = qty;
             this.description = description;
         }
+        public string PartNo
+        {
+            get{return partNo;}
+        }
+        public double Price
+        {
+            get { return price; }
+        }
+        public int Qty
+        {
+            get { return qty; }
+        }
+        public string Desc
+        {
+            get { return description; }
+        }
     }
 }

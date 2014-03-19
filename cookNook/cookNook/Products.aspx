@@ -47,6 +47,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>               
                             <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Buy"/>               
+                            <asp:BoundField DataField="OnHand" />
                         </Columns>
                 <FooterStyle BackColor="Tan" />
                 <HeaderStyle BackColor="Tan" Font-Bold="True" />

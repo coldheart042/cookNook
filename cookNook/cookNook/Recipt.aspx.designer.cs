@@ -49,15 +49,6 @@ namespace cookNook {
         protected global::System.Web.UI.WebControls.TableCell celNameFirst;
         
         /// <summary>
-        /// celNameLast control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell celNameLast;
-        
-        /// <summary>
         /// TableRow1 control.
         /// </summary>
         /// <remarks>
@@ -94,15 +85,6 @@ namespace cookNook {
         protected global::System.Web.UI.WebControls.TableCell celCity;
         
         /// <summary>
-        /// celState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell celState;
-        
-        /// <summary>
         /// TableRow3 control.
         /// </summary>
         /// <remarks>
@@ -121,6 +103,15 @@ namespace cookNook {
         protected global::System.Web.UI.WebControls.TableCell celZip;
         
         /// <summary>
+        /// Tablerow4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow Tablerow4;
+        
+        /// <summary>
         /// celPhone control.
         /// </summary>
         /// <remarks>
@@ -130,39 +121,39 @@ namespace cookNook {
         protected global::System.Web.UI.WebControls.TableCell celPhone;
         
         /// <summary>
-        /// tblCart control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblCart;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Button1 control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnBack;
         
         /// <summary>
-        /// Button2 control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// Button3 control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }
